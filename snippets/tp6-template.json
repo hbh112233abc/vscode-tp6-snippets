@@ -1,0 +1,245 @@
+{
+	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"extend": {
+		"prefix": "extend",
+		"body": [
+			"{extend name='${1:public/base}'/}"
+		],
+		"description": "模板继承"
+	},
+	"block": {
+		"prefix": "block",
+		"body": [
+			"{block name='${1:block_name}'}",
+			"\t$0",
+			"{/block}"
+		],
+		"description": "模板区块"
+	},
+	"include": {
+		"prefix": "include",
+		"body": [
+			"{include file='${1:public/footer}'/}"
+		],
+		"description": "引入模板文件"
+	},
+	"volist": {
+		"prefix": "volist",
+		"body": [
+			"{volist name='${1:list_name}' id='${2:vo}'}",
+			"\t$0",
+			"{/volist}"
+		],
+		"description": "模板遍历 volist"
+	},
+	"foreach": {
+		"prefix": "foreach",
+		"body": [
+			"{foreach \\$${1:list_name} as \\$${2:key} => \\$${3:vo}}",
+			"\t$0",
+			"{/foreach}"
+		],
+		"description": "模板遍历 foreach"
+	},
+	"for": {
+		"prefix": "for",
+		"body": [
+			"{for start='${1:开始值}' end='${2:结束值}'}",
+			"\t{\\$i}$0",
+			"{/for}"
+		],
+		"description": "模板遍历 for"
+	},
+	"eq": {
+		"prefix": "eq",
+		"body": [
+			"{eq name='${1:name}' value='${2:value}'}$0{else/}{/eq}"
+		],
+		"description": "比较标签 =="
+	},
+	"neq": {
+		"prefix": "neq",
+		"body": [
+			"{neq name='${1:name}' value='${2:value}'}$0{else/}{/neq}"
+		],
+		"description": "比较标签 !="
+	},
+	"heq": {
+		"prefix": "heq",
+		"body": [
+			"{heq name='${1:name}' value='${2:value}'}$0{else/}{/heq}"
+		],
+		"description": "比较标签 ==="
+	},
+	"nheq": {
+		"prefix": "nheq",
+		"body": [
+			"{nheq name='${1:name}' value='${2:value}'}$0{else/}{/nheq}"
+		],
+		"description": "比较标签 !=="
+	},
+	"gt": {
+		"prefix": "gt",
+		"body": [
+			"{gt name='${1:name}' value='${2:value}'}$0{else/}{/gt}"
+		],
+		"description": "比较标签 >"
+	},
+	"egt": {
+		"prefix": "egt",
+		"body": [
+			"{egt name='${1:name}' value='${2:value}'}$0{else/}{/egt}"
+		],
+		"description": "比较标签 >="
+	},
+	"lt": {
+		"prefix": "lt",
+		"body": [
+			"{lt name='${1:name}' value='${2:value}'}$0{else/}{/lt}"
+		],
+		"description": "比较标签 <"
+	},
+	"elt": {
+		"prefix": "elt",
+		"body": [
+			"{elt name='${1:name}' value='${2:value}'}$0{else/}{/elt}"
+		],
+		"description": "比较标签 <="
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": [
+			"{switch ${1:变量} }",
+				"\t{case ${2:value1} }${3:输出内容1}{/case}",
+				"\t{default /}${4:默认情况}",
+			"{/switch}",
+		],
+		"description": "条件判断 switch"
+	},
+	"if": {
+		"prefix": "if",
+		"body": [
+			"{if ${1:表达式} }",
+				"\t{elseif ${2:表达式} /}${3:输出内容1}",
+				"\t{else /}${4:默认情况}",
+			"{/if}",
+		],
+		"description": "条件判断 if"
+	},
+	"in": {
+		"prefix": "in",
+		"body": [
+			"{in name='${1:id}' value='${2:1,2,3}' }",
+				"\t${3:输出内容1}",
+			"{else /}",
+			"{/in}",
+		],
+		"description": "范围判断 in"
+	},
+	"notin": {
+		"prefix": "notin",
+		"body": [
+			"{notin name='${1:id}' value='${2:1,2,3}' }",
+				"\t${3:输出内容1}",
+			"{/notin}",
+		],
+		"description": "范围判断 notin"
+	},
+	"between": {
+		"prefix": "between",
+		"body": [
+			"{between name='${1:id}' value='${2:1,10}' }",
+				"\t${3:输出内容1}",
+			"{/between}",
+		],
+		"description": "范围判断 between"
+	},
+	"notbetween": {
+		"prefix": "notbetween",
+		"body": [
+			"{notbetween name='${1:id}' value='${2:1,10}' }",
+				"\t${3:输出内容1}",
+			"{/notbetween}",
+		],
+		"description": "范围判断 notbetween"
+	},
+	"present": {
+		"prefix": "present",
+		"body": [
+			"{present name='${1:id}'}",
+				"\t${2:输出内容1}",
+			"{/present}",
+		],
+		"description": "是否定义 present"
+	},
+	"notpresent": {
+		"prefix": "notpresent",
+		"body": [
+			"{notpresent name='${1:id}'}",
+				"\t${2:输出内容1}",
+			"{/notpresent}",
+		],
+		"description": "是否定义 notpresent"
+	},
+	"empty": {
+		"prefix": "empty",
+		"body": [
+			"{empty name='${1:id}'}",
+				"\t${2:输出内容1}",
+			"{else /}",
+			"{/empty}",
+		],
+		"description": "是否为空 empty"
+	},
+	"notempty": {
+		"prefix": "notempty",
+		"body": [
+			"{notempty name='${1:id}'}",
+				"\t${2:输出内容1}",
+			"{/notempty}",
+		],
+		"description": "是否为空 notempty"
+	},
+	"defined": {
+		"prefix": "defined",
+		"body": [
+			"{defined name='${1:NAME}'}",
+				"\t${2:输出内容1}",
+			"{/defined}",
+		],
+		"description": "判断常量是否定义 defined"
+	},
+	"load": {
+		"prefix": "load",
+		"body": [
+			"{load href='${1:resource_href}' /}"
+		],
+		"description": "资源文件加载 load"
+	},
+	"assign": {
+		"prefix": "assign",
+		"body": [
+			"{assign name='${1:name}' value='${2:value}' /}"
+		],
+		"description": "定义标签 assign"
+	},
+	"define": {
+		"prefix": "define",
+		"body": [
+			"{define name='${1:NAME}' value='${2:value}' /}"
+		],
+		"description": "定义标签 define"
+	}
+}
