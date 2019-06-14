@@ -28,14 +28,18 @@
   "homepage": "https://github.com/hbh112233abc/vscode-tp6-snippets#readme",
   "contributes": {
       "snippets": [
-        {
-          "language": "php",
-          "path": "./snippets/tp6.json"
-        },
-         {
-           "language": "html",
-           "path": "./snippets/tp6-template.json"
-         }
+          {
+            "language": "php",
+            "path": "./snippets/tp6.json"
+          },
+          {
+            "language": "",
+            "path": "./snippets/tp6.code-snippets"
+          },
+          {
+            "language": "html",
+            "path": "./snippets/tp6-template.json"
+          }
       ]
   }
 }
