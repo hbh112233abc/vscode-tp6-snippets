@@ -51,7 +51,7 @@
 	//PHP: //
 	//HTML: <!-- -->
 	"make controller class": {
-		"prefix": "make_controller",
+		"prefix": "tp-controller",
 		"body": [
 			"<?php",
 			"namespace app\\\\${1:module_name}\\controller;",			
@@ -67,7 +67,7 @@
 		"description": "生成控制器类"
 	},
 	"make model class": {
-		"prefix": "make_model",
+		"prefix": "tp-model",
 		"body": [
 			"<?php",
 			"namespace app\\\\${1:module_name}\\model;",
@@ -82,7 +82,7 @@
 		"description": "生成模型类"
 	},
 	"make command class": {
-		"prefix": "make_command",
+		"prefix": "tp-command",
 		"body": [
 			"<?php",
 			"",
@@ -112,7 +112,7 @@
 		"description": "生成命令行类"
 	},
 	"make validate class": {
-		"prefix": "make_validate",
+		"prefix": "tp-validate",
 		"body": [
 			"<?php",
 			"",
@@ -142,7 +142,7 @@
 		"description": "生成验证器类"
 	},
 	"make php file": {
-		"prefix": "php new file",
+		"prefix": "tp-php",
 		"body": [
 			"<?php",
 			"namespace $1",
