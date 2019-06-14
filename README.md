@@ -2,11 +2,17 @@
 tp6 snippets for vs code
 
 ## tp6.json for php
-- `make_controller` create controller class
-- `make_model` create model class
-- `make_validate` create validate class
-- `make_command` create command class
-- `php` create new php start code
+- `tp-controller` create controller class
+- `tp-model` create model class
+- `tp-validate` create validate class
+- `tp-command` create command class
+- `tp-middleware` create middleware class
+- `tp-middleware` create middleware class
+- `tp-event` create event class
+- `tp-listener` create listener class
+- `tp-service` create service class
+- `tp-subscribe` create subscribe class
+- `tp-php` create new php start code
 
 ## tp6-template.json for html
 - `extend` create extend tag, default extend public/base template
