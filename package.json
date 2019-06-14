@@ -1,32 +1,32 @@
 {
   "name": "tp6-snippets",
   "displayName": "thinkphp6 snippets",
-  "version": "1.0.0",
   "description": "thinkphp6,snippet 快捷代码",
-  "icon": "images/thinkphp.png",
+  "version": "1.0.1",  
   "publisher": "hbh112233abc",
-  "main": "index.js",
-  "categories": [
-    "Snippets"
-  ],
+  "keywords": ["php", "thinkphp","thinkphp6"],
+  "author": "hbh112233abc",
+  "license": "MIT",
+  "icon": "images/thinkphp.png",  
   "engines": {
     "vscode": "^1.14.0"
   },
+  "categories": [
+    "Snippets"
+  ],
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hbh112233abc/vscode-tp6-snippets.git"
-  },
-  "keywords": ["php", "thinkphp","thinkphp6"],
-  "author": "hbh112233abc",
-  "license": "MIT",
+    "url": "https://github.com/hbh112233abc/vscode-tp6-snippets.git"
+  },  
   "bugs": {
     "url": "https://github.com/hbh112233abc/vscode-tp6-snippets/issues"
   },
   "homepage": "https://github.com/hbh112233abc/vscode-tp6-snippets#readme",
-    "contributes": {
+  "contributes": {
       "snippets": [
         {
           "language": "php",
@@ -37,5 +37,5 @@
            "path": "./snippets/tp6-template.json"
          }
       ]
-    }
+  }
 }
