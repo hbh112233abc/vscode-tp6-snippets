@@ -1,0 +1,190 @@
+{
+	"make controller class": {
+		"prefix": "tp-controller",
+		"body": [
+			"<?php",
+			"namespace app\\\\${1:module_name}\\controller;",			
+			"class ${TM_FILENAME_BASE}",
+			"{",
+				"\tpublic function ${2:index}()",
+				"\t{",
+					"\t\t$0"
+					"\t\treturn view();",
+				"\t}",
+			"}\n"
+		],
+		"description": "生成控制器类"
+	},
+	"make model class": {
+		"prefix": "tp-model",
+		"body": [
+			"<?php",
+			"namespace app\\\\${1:module_name}\\model;",
+			"use think\\Model;"
+			"class ${TM_FILENAME_BASE} extends Model",
+			"{",
+				"\t\\$table = '${2:table_name}';",
+				"\t\\$pk = '${3:id}';",
+				"\t$0",
+			"}\n"
+		],
+		"description": "生成模型类"
+	},
+	"make validate class": {
+		"prefix": "tp-validate",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\validate;",
+			"",
+			"use think\\Validate;",
+			"",
+			"class Test extends Validate",
+			"{",
+				"\t/**",
+				"\t * 定义验证规则",
+				"\t * 格式：'字段名'	=>	['规则1','规则2'...]",
+				"\t *",
+				"\t * @var array",
+				"\t */	",
+				"\tprotected \\$rule = [];",
+				"\t",
+				"\t/**",
+				"\t * 定义错误信息",
+				"\t * 格式：'字段名.规则名'	=>	'错误信息'",
+				"\t *",
+				"\t * @var array",
+				"\t */	",
+				"\tprotected \\$message = [];",
+			"}\n"
+		],
+		"description": "生成验证器类"
+	},
+	"make command class": {
+		"prefix": "tp-command",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\\\${1:module_name}\\command;",
+			"",
+			"use think\\console\\Command;",
+			"use think\\console\\Input;",
+			"use think\\console\\Output;",
+			"",
+			"class ${TM_FILENAME_BASE} extends Command",
+			"{",
+				"\tprotected function configure()",
+				"\t{",
+					"\t\t// 指令配置",
+					"\t\t\\$this->setName('${TM_FILENAME_BASE}');",
+					"\t\t// 设置参数",
+					"\t\t$0",
+				"\t}",
+			"",
+				"\tprotected function execute(Input $input, Output $output)",
+				"\t{",
+					"\t\t// 指令输出",
+					"\t\t\\$output->writeln('${TM_FILENAME_BASE}');",
+				"\t}",
+			"}\n"
+		],
+		"description": "生成命令行类"
+	},
+	"make middleware": {
+		"prefix": "tp-middleware",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\${1:module_name}\\middleware;",
+			"",
+			"class ${TM_FILENAME_BASE}",
+			"{",
+				"\tpublic function handle(\\$request, \\Closure \\$next)",
+				"\t{",
+					"\t\t$0",
+				"\t}",
+			"}\n"
+		],
+		"description": "生成中间件类"
+	},	
+	"make event": {
+		"prefix": "tp-event",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\${1:module_name}\\event;",
+			"",
+			"class ${TM_FILENAME_BASE}",
+			"{",				
+				"\t$0",
+			"}\n"
+		],
+		"description": "生成事件类"
+	},	
+	"make service": {
+		"prefix": "tp-service",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\${1:module_name}\\service;",
+			"",
+			"use think\\Service;",
+			"",
+			"class ${TM_FILENAME_BASE} extends Service",
+			"{",
+				"",
+				"\tpublic function register()",
+				"\t{",
+					"\t\t$0",
+				"\t}",
+				"",
+				"\tpublic function boot()",
+				"\t{",
+					"\t\t",
+				"\t}",
+			"}\n"
+		],
+		"description": "生成服务类"
+	},	
+	"make listener": {
+		"prefix": "tp-listener",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\${1:module_name}\\listener;",			
+			"",
+			"class ${TM_FILENAME_BASE}",
+			"{",
+				"",
+				"\tpublic function handle(\\$event)",
+				"\t{",
+					"\t\t$0",
+				"\t}",				
+			"}\n"
+		],
+		"description": "生成监听类"
+	},	
+	"make subscribe": {
+		"prefix": "tp-subscribe",
+		"body": [
+			"<?php",
+			"",
+			"namespace app\\${1:module_name}\\subscribe;",
+			"",			
+			"class ${TM_FILENAME_BASE}",
+			"{",			
+				"\t$0",				
+			"}\n"
+		],
+		"description": "生成订阅类"
+	},	
+	"make php file": {
+		"prefix": "tp-php",
+		"body": [
+			"<?php",
+			"namespace $1",
+			"$0"
+		],
+		"description": "创建新php文件"
+	}
+}
