@@ -111,7 +111,7 @@
 			"{switch ${1:变量} }",
 				"\t{case ${2:value1} }${3:输出内容1}{/case}",
 				"\t{default /}${4:默认情况}",
-			"{/switch}",
+			"{/switch}"
 		],
 		"description": "条件判断 switch"
 	},
@@ -121,7 +121,7 @@
 			"{if ${1:表达式} }",
 				"\t{elseif ${2:表达式} /}${3:输出内容1}",
 				"\t{else /}${4:默认情况}",
-			"{/if}",
+			"{/if}"
 		],
 		"description": "条件判断 if"
 	},
@@ -131,7 +131,7 @@
 			"{in name='${1:id}' value='${2:1,2,3}' }",
 				"\t${3:输出内容1}",
 			"{else /}",
-			"{/in}",
+			"{/in}"
 		],
 		"description": "范围判断 in"
 	},
@@ -140,7 +140,7 @@
 		"body": [
 			"{notin name='${1:id}' value='${2:1,2,3}' }",
 				"\t${3:输出内容1}",
-			"{/notin}",
+			"{/notin}"
 		],
 		"description": "范围判断 notin"
 	},
@@ -149,7 +149,7 @@
 		"body": [
 			"{between name='${1:id}' value='${2:1,10}' }",
 				"\t${3:输出内容1}",
-			"{/between}",
+			"{/between}"
 		],
 		"description": "范围判断 between"
 	},
@@ -158,7 +158,7 @@
 		"body": [
 			"{notbetween name='${1:id}' value='${2:1,10}' }",
 				"\t${3:输出内容1}",
-			"{/notbetween}",
+			"{/notbetween}"
 		],
 		"description": "范围判断 notbetween"
 	},
@@ -167,7 +167,7 @@
 		"body": [
 			"{present name='${1:id}'}",
 				"\t${2:输出内容1}",
-			"{/present}",
+			"{/present}"
 		],
 		"description": "是否定义 present"
 	},
@@ -176,7 +176,7 @@
 		"body": [
 			"{notpresent name='${1:id}'}",
 				"\t${2:输出内容1}",
-			"{/notpresent}",
+			"{/notpresent}"
 		],
 		"description": "是否定义 notpresent"
 	},
@@ -186,7 +186,7 @@
 			"{empty name='${1:id}'}",
 				"\t${2:输出内容1}",
 			"{else /}",
-			"{/empty}",
+			"{/empty}"
 		],
 		"description": "是否为空 empty"
 	},
@@ -195,7 +195,7 @@
 		"body": [
 			"{notempty name='${1:id}'}",
 				"\t${2:输出内容1}",
-			"{/notempty}",
+			"{/notempty}"
 		],
 		"description": "是否为空 notempty"
 	},
@@ -204,7 +204,7 @@
 		"body": [
 			"{defined name='${1:NAME}'}",
 				"\t${2:输出内容1}",
-			"{/defined}",
+			"{/defined}"
 		],
 		"description": "判断常量是否定义 defined"
 	},

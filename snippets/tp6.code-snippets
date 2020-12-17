@@ -3,12 +3,12 @@
 		"prefix": "tp-controller",
 		"body": [
 			"<?php",
-			"namespace app\\\\${1:module_name}\\controller;",			
+			"namespace app\\\\${1:module_name}\\controller;",
 			"class ${TM_FILENAME_BASE}",
 			"{",
 				"\tpublic function ${2:index}()",
 				"\t{",
-					"\t\t$0"
+					"\t\t$0",
 					"\t\treturn view();",
 				"\t}",
 			"}\n"
@@ -20,11 +20,11 @@
 		"body": [
 			"<?php",
 			"namespace app\\\\${1:module_name}\\model;",
-			"use think\\Model;"
+			"use think\\Model;",
 			"class ${TM_FILENAME_BASE} extends Model",
 			"{",
-				"\t\\$table = '${2:table_name}';",
-				"\t\\$pk = '${3:id}';",
+				"\tprotected \\$table = '${2:table_name}';",
+				"\tprotected \\$pk = '${3:id}';",
 				"\t$0",
 			"}\n"
 		],
@@ -43,19 +43,26 @@
 			"{",
 				"\t/**",
 				"\t * 定义验证规则",
-				"\t * 格式：'字段名'	=>	['规则1','规则2'...]",
+				"\t * 格式：'字段名'=>['规则1','规则2'...]",
 				"\t *",
 				"\t * @var array",
-				"\t */	",
+				"\t */",
 				"\tprotected \\$rule = [];",
 				"\t",
 				"\t/**",
 				"\t * 定义错误信息",
-				"\t * 格式：'字段名.规则名'	=>	'错误信息'",
+				"\t * 格式：'字段名.规则名'=>'错误信息'",
 				"\t *",
 				"\t * @var array",
-				"\t */	",
+				"\t */",
 				"\tprotected \\$message = [];",
+				"\t/**",
+				"\t * 定义验证场景",
+				"\t * 格式：'场景名'=>['规则1','规则2',...]",
+				"\t *",
+				"\t * @var array",
+				"\t */",
+				"\tprotected \\$sence = [];",
 			"}\n"
 		],
 		"description": "生成验证器类"
@@ -70,6 +77,8 @@
 			"use think\\console\\Command;",
 			"use think\\console\\Input;",
 			"use think\\console\\Output;",
+			"use think\\console\\Input\\Argument;",
+			"use think\\console\\Input\\Option;",
 			"",
 			"class ${TM_FILENAME_BASE} extends Command",
 			"{",
@@ -78,13 +87,22 @@
 					"\t\t// 指令配置",
 					"\t\t\\$this->setName('${TM_FILENAME_BASE}');",
 					"\t\t// 设置参数",
-					"\t\t$0",
+					"\t\t\\$this->addArgument('${2:arg_name}', Argument::OPTIONAL, '${3:传参说明}');",
+					"\t\t\\$this->addOption('${4:long_arg_name}', '${5:short_arg_name}', Option::VALUE_OPTIONAL, '${6:传参说明}');",
+					"\t\t\\$this->setDescription('命令描述信息');",
+
 				"\t}",
 			"",
 				"\tprotected function execute(Input $input, Output $output)",
 				"\t{",
 					"\t\t// 指令输出",
 					"\t\t\\$output->writeln('${TM_FILENAME_BASE}');",
+					"\t\t// 获取参数",
+					"\t\t\\$${2:arg_name} = \\$input->getArgument('${2:arg_name}');",
+					"\t\t\\$${4:long_arg_name} = \\$input->getOption('${4:long_arg_name}');",
+
+					"\t\t$0",
+
 				"\t}",
 			"}\n"
 		],
@@ -102,11 +120,12 @@
 				"\tpublic function handle(\\$request, \\Closure \\$next)",
 				"\t{",
 					"\t\t$0",
+					"\t\t\\$next();",
 				"\t}",
 			"}\n"
 		],
 		"description": "生成中间件类"
-	},	
+	},
 	"make event": {
 		"prefix": "tp-event",
 		"body": [
@@ -115,12 +134,12 @@
 			"namespace app\\${1:module_name}\\event;",
 			"",
 			"class ${TM_FILENAME_BASE}",
-			"{",				
+			"{",
 				"\t$0",
 			"}\n"
 		],
 		"description": "生成事件类"
-	},	
+	},
 	"make service": {
 		"prefix": "tp-service",
 		"body": [
@@ -145,13 +164,13 @@
 			"}\n"
 		],
 		"description": "生成服务类"
-	},	
+	},
 	"make listener": {
 		"prefix": "tp-listener",
 		"body": [
 			"<?php",
 			"",
-			"namespace app\\${1:module_name}\\listener;",			
+			"namespace app\\${1:module_name}\\listener;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -159,25 +178,25 @@
 				"\tpublic function handle(\\$event)",
 				"\t{",
 					"\t\t$0",
-				"\t}",				
+				"\t}",
 			"}\n"
 		],
 		"description": "生成监听类"
-	},	
+	},
 	"make subscribe": {
 		"prefix": "tp-subscribe",
 		"body": [
 			"<?php",
 			"",
 			"namespace app\\${1:module_name}\\subscribe;",
-			"",			
+			"",
 			"class ${TM_FILENAME_BASE}",
-			"{",			
-				"\t$0",				
+			"{",
+				"\t$0",
 			"}\n"
 		],
 		"description": "生成订阅类"
-	},	
+	},
 	"make php file": {
 		"prefix": "tp-php",
 		"body": [
