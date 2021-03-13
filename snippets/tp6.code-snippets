@@ -93,7 +93,7 @@
 
 				"\t}",
 			"",
-				"\tprotected function execute(Input $input, Output $output)",
+				"\tprotected function execute(Input \\$input, Output \\$output)",
 				"\t{",
 					"\t\t// 指令输出",
 					"\t\t\\$output->writeln('${TM_FILENAME_BASE}');",
