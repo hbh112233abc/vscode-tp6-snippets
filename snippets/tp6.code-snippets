@@ -39,22 +39,27 @@
 			"{",
 				"\t/**",
 				"\t * 定义验证规则",
-				"\t * 格式：'字段名'=>['规则1','规则2'...]",
+				"\t * 格式：'字段名' => ['规则1','规则2'...]",
 				"\t *",
 				"\t * @var array",
 				"\t */",
-				"\tprotected \\$rule = [];",
+				"\tprotected \\$rule = [",
+                "\t\t$0",
+                "\t];",
 				"\t",
 				"\t/**",
 				"\t * 定义错误信息",
-				"\t * 格式：'字段名.规则名'=>'错误信息'",
+				"\t * 格式：'字段名.规则名' => '错误信息'",
 				"\t *",
 				"\t * @var array",
 				"\t */",
-				"\tprotected \\$message = [];",
+				"\tprotected \\$message = [",
+                "\t\t$1",
+                "\t];",
+				"\t",
 				"\t/**",
-				"\t * 定义验证场景",
-				"\t * 格式：'场景名'=>['规则1','规则2',...]",
+				"\t * 验证场景",
+				"\t * 格式：'场景名称' => ['校验字段']",
 				"\t *",
 				"\t * @var array",
 				"\t */",
@@ -105,14 +110,20 @@
 	"make middleware": {
 		"prefix": "tp-middleware",
 		"body": [
-			"namespace app\\${1:module_name}\\middleware;",
+			"namespace app\\\\${1:module_name}\\middleware;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
 				"\tpublic function handle(\\$request, \\Closure \\$next)",
 				"\t{",
 					"\t\t$0",
-					"\t\t\\$next();",
+                    "\t\t//前置中间件",
+                    "\t\treturn \\$next(\\$request);",
+                    "\t\t//后置中间件",
+                    "\t\t//\\$resp = \\$next(\\$request);",
+                    "\t\t//do something",
+                    "\t\t//return \\$resp;",
+
 				"\t}",
 			"}\n"
 		],
@@ -121,7 +132,7 @@
 	"make event": {
 		"prefix": "tp-event",
 		"body": [
-			"namespace app\\${1:module_name}\\event;",
+			"namespace app\\\\${1:module_name}\\event;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -133,7 +144,7 @@
 	"make service": {
 		"prefix": "tp-service",
 		"body": [
-			"namespace app\\${1:module_name}\\service;",
+			"namespace app\\\\${1:module_name}\\service;",
 			"",
 			"use think\\Service;",
 			"",
@@ -156,7 +167,7 @@
 	"make listener": {
 		"prefix": "tp-listener",
 		"body": [
-			"namespace app\\${1:module_name}\\listener;",
+			"namespace app\\\\${1:module_name}\\listener;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -172,7 +183,7 @@
 	"make subscribe": {
 		"prefix": "tp-subscribe",
 		"body": [
-			"namespace app\\${1:module_name}\\subscribe;",
+			"namespace app\\\\${1:module_name}\\subscribe;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
