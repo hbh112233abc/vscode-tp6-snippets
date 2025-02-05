@@ -1,6 +1,6 @@
 {
 	"make controller class": {
-		"prefix": "tp-controller",
+		"prefix": "controller",
 		"body": [
 			"namespace app\\\\${1:module_name}\\controller;",
 			"class ${TM_FILENAME_BASE}",
@@ -15,7 +15,7 @@
 		"description": "生成控制器类"
 	},
 	"make model class": {
-		"prefix": "tp-model",
+		"prefix": "model",
 		"body": [
 			"namespace app\\\\${1:module_name}\\model;",
 			"use think\\Model;",
@@ -29,7 +29,7 @@
 		"description": "生成模型类"
 	},
 	"make validate class": {
-		"prefix": "tp-validate",
+		"prefix": "validate",
 		"body": [
 			"namespace app\\validate;",
 			"",
@@ -69,7 +69,7 @@
 		"description": "生成验证器类"
 	},
 	"make command class": {
-		"prefix": "tp-command",
+		"prefix": "command",
 		"body": [
 			"namespace app\\\\${1:module_name}\\command;",
 			"",
@@ -108,7 +108,7 @@
 		"description": "生成命令行类"
 	},
 	"make middleware": {
-		"prefix": "tp-middleware",
+		"prefix": "middleware",
 		"body": [
 			"namespace app\\\\${1:module_name}\\middleware;",
 			"",
@@ -130,7 +130,7 @@
 		"description": "生成中间件类"
 	},
 	"make event": {
-		"prefix": "tp-event",
+		"prefix": "event",
 		"body": [
 			"namespace app\\\\${1:module_name}\\event;",
 			"",
@@ -142,7 +142,7 @@
 		"description": "生成事件类"
 	},
 	"make service": {
-		"prefix": "tp-service",
+		"prefix": "service",
 		"body": [
 			"namespace app\\\\${1:module_name}\\service;",
 			"",
@@ -165,7 +165,7 @@
 		"description": "生成服务类"
 	},
 	"make listener": {
-		"prefix": "tp-listener",
+		"prefix": "listener",
 		"body": [
 			"namespace app\\\\${1:module_name}\\listener;",
 			"",
@@ -181,7 +181,7 @@
 		"description": "生成监听类"
 	},
 	"make subscribe": {
-		"prefix": "tp-subscribe",
+		"prefix": "subscribe",
 		"body": [
 			"namespace app\\\\${1:module_name}\\subscribe;",
 			"",
