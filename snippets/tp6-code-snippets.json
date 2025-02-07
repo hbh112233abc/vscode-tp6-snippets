@@ -1,10 +1,10 @@
 {
     "make controller class": {
         "scope": "html,php",
-        "prefix": "tp-controller",
+        "prefix": "tpcontroller",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\controller;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\controller;",
             "class ${TM_FILENAME_BASE}",
             "{",
             "\tpublic function ${2:index}()",
@@ -18,14 +18,14 @@
     },
     "make model class": {
         "scope": "html,php",
-        "prefix": "tp-model",
+        "prefix": "tpmodel",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\model;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\model;",
             "use think\\Model;",
             "class ${TM_FILENAME_BASE} extends Model",
             "{",
-            "\tprotected \\$table = '${2:table_name}';",
+            "\tprotected \\$name = '${2:${TM_FILENAME_BASE/([A-Z][a-z]+$)|([A-Z][a-z]+)/${1:/downcase}${2:/downcase}${2:+_}/g}}';",
             "\tprotected \\$pk = '${3:id}';",
             "\t$0",
             "}\n"
@@ -34,14 +34,14 @@
     },
     "make validate class": {
         "scope": "html,php",
-        "prefix": "tp-validate",
+        "prefix": "tpvalidate",
         "body": [
             "<?php",
             "namespace app\\validate;",
             "",
             "use think\\Validate;",
             "",
-            "class Test extends Validate",
+            "class ${TM_FILENAME_BASE} extends Validate",
             "{",
             "\t/**",
             "\t * 定义验证规则",
@@ -76,10 +76,10 @@
     },
     "make command class": {
         "scope": "html,php",
-        "prefix": "tp-command",
+        "prefix": "tpcommand",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\command;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\command;",
             "",
             "use think\\console\\Command;",
             "use think\\console\\Input;",
@@ -114,10 +114,10 @@
     },
     "make middleware": {
         "scope": "html,php",
-        "prefix": "tp-middleware",
+        "prefix": "tpmiddleware",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\middleware;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\middleware;",
             "",
             "class ${TM_FILENAME_BASE}",
             "{",
@@ -137,10 +137,10 @@
     },
     "make event": {
         "scope": "html,php",
-        "prefix": "tp-event",
+        "prefix": "tpevent",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\event;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\event;",
             "",
             "class ${TM_FILENAME_BASE}",
             "{",
@@ -151,10 +151,10 @@
     },
     "make service": {
         "scope": "html,php",
-        "prefix": "tp-service",
+        "prefix": "tpservice",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\service;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\service;",
             "",
             "use think\\Service;",
             "",
@@ -176,10 +176,10 @@
     },
     "make listener": {
         "scope": "html,php",
-        "prefix": "tp-listener",
+        "prefix": "tplistener",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\listener;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\listener;",
             "",
             "class ${TM_FILENAME_BASE}",
             "{",
@@ -194,10 +194,10 @@
     },
     "make subscribe": {
         "scope": "html,php",
-        "prefix": "tp-subscribe",
+        "prefix": "tpsubscribe",
         "body": [
             "<?php",
-            "namespace app\\\\${1:module_name}\\subscribe;",
+            "namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\subscribe;",
             "",
             "class ${TM_FILENAME_BASE}",
             "{",

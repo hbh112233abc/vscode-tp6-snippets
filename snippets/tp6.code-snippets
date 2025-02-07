@@ -2,7 +2,7 @@
 	"make controller class": {
 		"prefix": "controller",
 		"body": [
-			"namespace app\\\\${1:module_name}\\controller;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\controller;",
 			"class ${TM_FILENAME_BASE}",
 			"{",
 				"\tpublic function ${2:index}()",
@@ -17,7 +17,7 @@
 	"make model class": {
 		"prefix": "model",
 		"body": [
-			"namespace app\\\\${1:module_name}\\model;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\model;",
 			"use think\\Model;",
 			"class ${TM_FILENAME_BASE} extends Model",
 			"{",
@@ -35,7 +35,7 @@
 			"",
 			"use think\\Validate;",
 			"",
-			"class Test extends Validate",
+			"class ${TM_FILENAME_BASE} extends Validate",
 			"{",
 				"\t/**",
 				"\t * 定义验证规则",
@@ -71,7 +71,7 @@
 	"make command class": {
 		"prefix": "command",
 		"body": [
-			"namespace app\\\\${1:module_name}\\command;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\command;",
 			"",
 			"use think\\console\\Command;",
 			"use think\\console\\Input;",
@@ -110,7 +110,7 @@
 	"make middleware": {
 		"prefix": "middleware",
 		"body": [
-			"namespace app\\\\${1:module_name}\\middleware;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\middleware;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -132,7 +132,7 @@
 	"make event": {
 		"prefix": "event",
 		"body": [
-			"namespace app\\\\${1:module_name}\\event;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\event;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -144,7 +144,7 @@
 	"make service": {
 		"prefix": "service",
 		"body": [
-			"namespace app\\\\${1:module_name}\\service;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\service;",
 			"",
 			"use think\\Service;",
 			"",
@@ -167,7 +167,7 @@
 	"make listener": {
 		"prefix": "listener",
 		"body": [
-			"namespace app\\\\${1:module_name}\\listener;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\listener;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",
@@ -183,7 +183,7 @@
 	"make subscribe": {
 		"prefix": "subscribe",
 		"body": [
-			"namespace app\\\\${1:module_name}\\subscribe;",
+			"namespace app\\\\${1:${TM_DIRECTORY/.*[\\/\\\\]([^\\/\\\\]+)[\\/\\\\][^\\/\\\\]+$/$1/}}\\subscribe;",
 			"",
 			"class ${TM_FILENAME_BASE}",
 			"{",

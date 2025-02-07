@@ -2,7 +2,7 @@
     "name": "tp6-snippets",
     "displayName": "thinkphp6 snippets",
     "description": "thinkphp6,snippet 快捷代码",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "publisher": "hbh112233abc",
     "keywords": [
         "php",
@@ -31,6 +31,10 @@
             {
                 "language": "php",
                 "path": "./snippets/tp6.code-snippets"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/tp6-code-snippets.json"
             },
             {
                 "language": "html",
